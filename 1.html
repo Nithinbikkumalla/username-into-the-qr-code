@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./2m.css">
+</head>
+<body>
+    <div class="container">
+        <p>Enter the username:</p>
+        <input type="text" placeholder="username" id="qrtext">
+        <div id="imgbox">
+            <img src="" id="qrimage">
+        </div>
+        <button onclick="generateQr()">Generate the Qr</button>
+    </div>
+    <script>
+        let imgbox= document.getElementById("imgbox");
+        let qrimage= document.getElementById("qrimage");
+        let qrtext= document.getElementById("qrtext");
+    
+        function generateQr(){
+            qrimage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+ qrtext.value;
+            imgbox.classList.add("show-img");
+        }
+    </script>
+</body>
+</html>
